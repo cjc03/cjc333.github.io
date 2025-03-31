@@ -1,3 +1,118 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+# 基本设置
+baseURL = "https://github.com/cjc03/cjc333.github.io"  # 替换为您的GitHub Pages URL
+languageCode = "en-us"
+title = "Moonviewr"
+theme = "hugo-brewm"  # Use your downloaded theme name
+
+# Content Settings
+paginate = 5
+summaryLength = 30
+defaultContentLanguage = "en"
+hasCJKLanguage = true  # Automatically count words for Chinese content
+
+# Website Parameters
+[params]
+  # Website description
+  description = "This is my personal blog, sharing my thoughts and learning experiences"
+  author = "Moonviewr"
+
+  # Home page mode: can be profileMode or regular mode
+  # Profile Mode
+  [params.profileMode]
+    enabled = true
+    title = "Your Name"
+    subtitle = "Short personal introduction"
+    imageUrl = "img/avatar.jpg"  # Place in static/img/ directory
+    imageTitle = "My Avatar"
+
+    # Buttons in profile mode
+    [[params.profileMode.buttons]]
+      name = "Posts"
+      url = "posts"
+    [[params.profileMode.buttons]]
+      name = "Categories"
+      url = "categories"
+    [[params.profileMode.buttons]]
+      name = "Tags"
+      url = "tags"
+
+  # Home page information (if not using profileMode)
+  [params.homeInfoParams]
+    Title = "Welcome to My Blog 👋"
+    Content = "A place where I share technology and thoughts..."
+
+  # Social Links
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:your-email@example.com"
+
+  # Comment System Settings (Optional)
+  [params.comments]
+    enabled = false  # Set to true to enable comments
+    # provider = "disqus"  # Can be "disqus", "utterances", etc.
+    # disqusShortname = "your-disqus-shortname"  # If using Disqus
+
+  # Other Settings
+  ShowReadingTime = true  # Show reading time
+  ShowShareButtons = true  # Show share buttons
+  ShowPostNavLinks = true  # Show post navigation links
+  ShowBreadCrumbs = true  # Show breadcrumb navigation
+  ShowCodeCopyButtons = true  # Show code copy buttons
+  hideFooter = false  # Whether to hide footer
+  EnableRSS = true  # Enable RSS
+  enableEmoji = true  # Support Emoji
+
+  # Section A and B Different Style Settings
+  [params.sectionA]
+    # Section A specific parameters
+    cssClass = "section-a"
+  [params.sectionB]
+    # Section B specific parameters
+    cssClass = "section-b"
+
+# Menu Settings
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "All Posts"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "sectionA"
+    name = "Section A"
+    url = "/sectionA/"
+    weight = 20
+  [[menu.main]]
+    identifier = "sectionB"
+    name = "Section B"
+    url = "/sectionB/"
+    weight = 30
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 40
+  [[menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    weight = 50
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 60
+
+# Markdown Options
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    style = "github"
+
+  [markup.goldmark.renderer]
+    unsafe = true  # Allow HTML in Markdown
